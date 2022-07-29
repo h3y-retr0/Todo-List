@@ -1,0 +1,26 @@
+
+body {
+    background-color: #fafafa;
+    /* background-color: rgb(0, 0, 0, 0.87); */
+    color: rgb(0, 0, 0, 0.87);
+    /* color: #fafafa; */
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: blue;
+    height: 11vh;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+header h1 {
+    padding: 20px;
+}
+header span {
+    font-style: italic;
+}
+
