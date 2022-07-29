@@ -7,20 +7,77 @@ body {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
+
+
+/* ***** HEADER ******* */
+
 header {
     width: 100%;
     background-color: blue;
-    height: 11vh;
+    height: 7vh;
     font-size: 0.85rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    position: relative;
     color: white;
+
+    filter: blur(0.6px);
+    -webkit-filter: blur(0.6px);
 }
 
-header h1 {
-    padding: 20px;
+header img {
+    cursor: pointer;
+    padding-left: 40px;
+    width: 40px;
+    height: 40px;
 }
-header span {
+
+header h2{
+    padding-left: 100px;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 10px;
+    position: absolute;
+    display: inline;
+}
+
+h2 span {
     font-style: italic;
 }
 
+header svg {
+    width: 30px;
+    height: 50px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+/* ******************** */
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.taskBar {
+    background-color: red;
+    width: 45%;
+    max-width: 85%;
+    height: 80px;
+}
+
+.todoContainer {
+    background-color: blue;
+    width: 45%;
+    max-width: 85%;
+    height: 700px;
+    margin-top: 20px;
+}
