@@ -15,25 +15,45 @@
     <header>
         <div class="title">
             <img src="img/logopng.png" alt="Todo!" />
-            <h2>Todo <span>List</span></h2>
+            <h2>JS. Todo <span>List</span></h2>
         </div>
         
         <div class="search">
             <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#ffffff" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
         </div>
     </header>
-
+    
     <section class="main">
         <div class="taskBar">
-
+            <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path id="my-task-icon" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+            <!-- <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg> -->
+            <span id="txt">MY TASKS</span>
+            <span class="line"></span>
+            <!-- Maybe add a settings section here -->
         </div>
         <div class="todoContainer">
-            <div class="addTodo">
-
+            <div class="addTodo" id="send">
+                <input id="todoInput" type="text" placeholder="Type here to add a new task item..." />
+                <svg id="sendBtn" class="MuiSvgIcon-root MuiSvgIcon-colorDisabled" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path  d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>  
+            </div>
+            <div class="Todo">
+                <button class="checkShadow">
+                    <span id="checkContainer">
+                        <input id="check" type="checkbox"/>
+                    </span>
+                </button>
+                
+                <input id="edit" type="text" placeholder="Edit your todo item here" />
+                <button class="delete">
+                    <svg id="bin" class="MuiSvgIcon-root MuiSvgIcon-colorError" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+                </button>
             </div>
         </div>
 
 
     </section>
+
+    <script src="js/app.js"></script>
+    <script src="js/todo.js"></script>
 </body>
 </html>
