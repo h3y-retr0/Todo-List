@@ -33,21 +33,26 @@
         </div>
         <div class="todoContainer">
             <div class="addTodo" id="send">
-                <input id="todoInput" type="text" placeholder="Type here to add a new task item..." />
+                <input id="todoInput" type="text" placeholder="Type here to add a new task item...">
                 <svg id="sendBtn" class="MuiSvgIcon-root MuiSvgIcon-colorDisabled" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path  d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>  
             </div>
-            <div class="Todo">
-                <button class="checkShadow">
-                    <span id="checkContainer">
-                        <input id="check" type="checkbox"/>
-                    </span>
-                </button>
+            <div id="wrapper">
+                <div class="Todo" id="Todo">
+                    <button class="checkShadow">
+                        <span id="checkContainer">
+                            <input id="check" type="checkbox"/>
+                        </span>
+                    </button>
+                    
+                    <input id="edit" type="text" placeholder="Edit your todo item here"/>
+                    <button class="delete">
+                        <svg id="bin" class="MuiSvgIcon-root MuiSvgIcon-colorError" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+                    </button>
+                </div>
                 
-                <input id="edit" type="text" placeholder="Edit your todo item here" />
-                <button class="delete">
-                    <svg id="bin" class="MuiSvgIcon-root MuiSvgIcon-colorError" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
-                </button>
+                
             </div>
+            
         </div>
 
 

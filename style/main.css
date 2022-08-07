@@ -151,7 +151,7 @@ header svg {
     transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     flex-shrink: 0;
     user-select: none;
-    cursor: pointer;
+    
     
 }
 
@@ -209,7 +209,7 @@ header svg {
     display: inline;
     padding-right: 15px;
     width: 25px;
-    cursor: pointer !important;
+    cursor: text;
     
 }
 
@@ -223,6 +223,11 @@ header svg {
 
 /* *************** */
 /* Todos */
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+}
 .Todo {
     display: flex;
     align-content: center;
@@ -293,6 +298,7 @@ header svg {
     display: inline-block;
     border-radius: 50%;
     cursor: pointer;
+    
 }
 
 .Todo button:hover {
