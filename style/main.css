@@ -174,7 +174,7 @@ header svg {
 /* *************** */
 
 .addTodo {
-    fill: gray;
+    fill: rgba(0, 0, 0, 0.26);
     position: relative;
     height: 70px;
     width: 100%;
@@ -184,15 +184,45 @@ header svg {
     align-items: center;
     border-bottom: 1px solid gray;
     font-family: -apple-system,Rubik,BlinkMacSystemFont,"Segoe UI",Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    overflow: hidden;
+    
 }
 
 .addTodo:hover {
     border-bottom: 2px solid black;
 }
 
-.addTodoClicked {
-    border-bottom: 2px solid #3d72fe;
+@keyframes focused {
+    0% {
+       width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }
+
+@keyframes unfocused {
+    0% {
+        width: 100%;
+     }
+     100% {
+         width: 0%;
+     } 
+}
+
+.inputFocused {
+    width: 0%;
+    position: absolute;
+    display: block;
+    height: 2px;
+    background-color: #3d72fe;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    animation: .2s ease;
+    
+}
+
 
 .addTodo input {
     position: relative;
@@ -201,16 +231,14 @@ header svg {
     border: none;
     outline: none !important;
     padding: 15px;
+    
 }
-
-
 
 .addTodo svg {
     display: inline;
     padding-right: 15px;
     width: 25px;
     cursor: text;
-    
 }
 
 #divider {
@@ -280,11 +308,16 @@ header svg {
     letter-spacing: inherit;
     font-weight: 0;
     font-family: -apple-system,Rubik,BlinkMacSystemFont,"Segoe UI",Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    
 }
 
 
 #edit:hover{
     border-bottom: 2px solid black;
+}
+
+#edit:focus {
+    border-bottom: 2px solid #3d72fe;
 }
 
 .Todo button {
