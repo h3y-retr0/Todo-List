@@ -12,6 +12,7 @@
 
 </head>
 <body>
+    
     <header>
         <div class="title">
             <img src="img/logopng.png" alt="Todo!" />
@@ -37,13 +38,33 @@
                 <input id="todoInput" type="text" placeholder="Type here to add a new task item...">
                 <svg id="sendBtn" class="MuiSvgIcon-root MuiSvgIcon-colorDisabled" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path  d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>  
             </div>
-            <div id="wrapper"></div>
+            <div id="wrapper">
+                <div class="Todo">
+                    <button class="checkShadow">
+                        <span id="checkContainer">
+                            <input id="check" type="checkbox"/>
+                        </span>
+                    </button>
+                
+                    <input id="edit" type="text" placeholder="Edit your todo item here" value="${value}"/>
+                </div>
+                <div class="todoFooter">
+                    <p id="completed">Completed items: 0</p>
+                    <p id="total">Total items: </p>
+                </div>
+            </div>
+            <!-- <div class="empty">
+               <img src="img/empty_todos.svg" />
+                <h1>You don't have tasks</h1>
+                <p><center>Here you will be able to see the tasks you create. Create a new task now !</center></p>
+            </div> -->
         </div>
-
-
+        
+        
     </section>
 
-    <script src="js/app.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/app.js"></script>
+    <noscript>Sorry your browser does not support JavaScript</noscript>
 </body>
 </html>

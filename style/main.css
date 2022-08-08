@@ -92,30 +92,25 @@ header svg {
 .main {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     flex-wrap: nowrap;
-    
+    margin-top: 80px;
 }
-@media screen and (max-height: 800px) {
+
+@media screen and (max-height: 680px) {
     .main {
-        margin-top: 40px;
+        position: sticky;
+        margin-top: 5px;
     }
 }
 
-@media screen and (min-height: 800px) {
-    .main {
-        margin-top: auto;
-    }
-}
 #my-task-icon {
     fill: #3d72fe;
 }
 .taskBar {
     background-color: white;
-    width: 85%;
+    width: 90%;
     max-width: 900px;
     height: 70px;
     color: #3d72fe;
@@ -128,14 +123,14 @@ header svg {
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
-    margin: 0;
+
 }
 
 .todoContainer {
     background-color: white;
-    width: 85%;
+    width: 90%;
     max-width: 900px;
-    height: 700px;
+    
     margin-top: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
@@ -340,6 +335,60 @@ header svg {
 
 #bin {
     width: 100%;
-    transform: translateX(-20%);
 }
+/* LayOuts */
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system,Rubik,BlinkMacSystemFont,"Segoe UI",Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    
+}
+
+.empty img {
+    width: 50%;
+    padding-top: 20px;
+}
+
+.empty h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.empty p {
+    color: rgba(0, 0, 0, 0.26);
+    font-weight: 500;
+    padding: 0 5px 5px 40px;
+    display: block;
+    margin-top: 0;
+}
+
+.empty center {
+    margin-top: -20px;
+    padding: 0;
+}
+
+/* ********** */
+.todoFooter {
+   
+    padding-bottom: 15px;
+    padding-top: 30px;
+}
+.todoFooter p {
+    display: inline;
+    font-family: -apple-system,Rubik,BlinkMacSystemFont,"Segoe UI",Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    line-height: 1.5;
+    font-size: 1.02rem;
+    padding-left: 10px;
+    margin-right: 6px;
+    color: #999999;
+    font-weight: 400;
+    
+}
+
 
