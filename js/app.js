@@ -1,13 +1,11 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
     'use strict'
 
     const sendTodoDiv = document.getElementById('send')
     const sendBtn = document.getElementById('sendBtn')
     const input = document.getElementById('todoInput')
-    
-
+    displayEmptyLayout()
     input.addEventListener('keyup', () => {
         if(parseInt(input.value.length) >= 2) {
             sendBtn.style.fill = '#3d72fe'

@@ -1,5 +1,4 @@
 
-
 let todos = document.getElementsByClassName('Todo') 
 const input = document.getElementById('todoInput')
 const todoContainer = document.getElementById('wrapper')
@@ -17,14 +16,22 @@ const displayEmptyLayout = () => {
     wrap.classList.add('empty')
     wrap.innerHTML = emptyTodoLayout
     container.appendChild(wrap)
-
 }
 
 
 
 const displayList = () => {
     document.querySelector('.empty').remove()
+    let footer = document.createElement('div')
+    footer.classList.add('todoFooter') 
+    footer.innerHTML = `
+        <p id="completed">Completed items: 0</p>
+        <p id="total">Total items: 0</p>
+    `
+    container.appendChild(footer)
+    container.style.height = ''
 }
+
 let total_text = document.querySelector('#total')   
 let completed_text = document.querySelector('#completed')
 
@@ -36,7 +43,6 @@ const addTodo = (value) => {
         console.error("Task name is required")
         return
     } else {
-        
         // Display List
         
         if(todos.length === 0) {
@@ -48,6 +54,7 @@ const addTodo = (value) => {
         container.setAttribute('id', key++)            
         container.classList.add('Todo')
         todoContainer.appendChild(container)
+        
             
 
         container.innerHTML = `
@@ -73,6 +80,9 @@ const addTodo = (value) => {
 const removeTodo = (key) => {
     document.getElementById(key).remove()
     if (todos.length === 0) {
+        //Remove previous and display empty
+        let foot = document.querySelector('.todoFooter')
+        foot.remove()
         displayEmptyLayout()
     }
 }
