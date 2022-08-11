@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sendBtn.addEventListener('click', () => {
    
         addTodo(input.value)
+        // Reset input 
         input.value = ''
         sendBtn.style.fill = 'rgba(0, 0, 0, 0.26)'
         sendBtn.style.cursor = 'text'

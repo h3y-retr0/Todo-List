@@ -334,6 +334,7 @@ header svg {
 
 #bin {
     width: 100%;
+    transform: translateX(-22%)
 }
 /* LayOuts */
 
