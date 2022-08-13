@@ -3,6 +3,7 @@ let todos = document.getElementsByClassName('Todo')
 const input = document.getElementById('todoInput')
 const todoContainer = document.getElementById('wrapper')
 const container = document.querySelector('.todoContainer')
+
 let emptyTodoLayout = `
     <img src="img/empty_todos.svg" />
     <h1>You don't have tasks</h1>
@@ -10,19 +11,15 @@ let emptyTodoLayout = `
     
 `
 
-let key = 0
-const displayEmptyLayout = () => {
-    container.style.height = '750px'
-    let wrap = document.createElement('div')
-    wrap.classList.add('empty')
-    wrap.innerHTML = emptyTodoLayout
-    container.appendChild(wrap)
-}
+var key = 0
+var total = 0
+var completed = 0
 
 const displayList = () => {
     document.querySelector('.empty').remove()
     let footer = document.createElement('div')
     footer.classList.add('todoFooter') 
+    
     footer.innerHTML = `
         <p id="completed">Completed items: 0</p>
         <p id="total">Total items: 0</p>
@@ -31,11 +28,22 @@ const displayList = () => {
     container.style.height = ''
 }
 
+
+const displayEmptyLayout = () => {
+    container.style.height = '750px'
+    let wrap = document.createElement('div')
+    wrap.classList.add('empty')
+    wrap.innerHTML = emptyTodoLayout
+    container.appendChild(wrap)
+}
+
+
+
+
 let total_text = document.querySelector('#total')   
 let completed_text = document.querySelector('#completed')
 
-let completed = 0
-let total = 0
+
 
 const addTodo = (value) => {
     if(parseInt(input.value.length) < 2 || input.value === '') {
@@ -89,11 +97,19 @@ const addTodo = (value) => {
         remove.innerHTML = '<svg id="bin" class="MuiSvgIcon-root MuiSvgIcon-colorError" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>'            
         
         container.appendChild(remove)
+                
+        // counter
+        total++
         
+        document.querySelector('#total').innerHTML = `
+        Total items: ${total}
+        `
+
         remove.onclick = () => {
             
             let itemToRemove = findTodo(container.getAttribute('id'))
             itemToRemove.remove()
+            
             // Remove previous and display empty if no todos
             if (todos.length === 0) {
                 //Remove previous and display empty
@@ -101,29 +117,48 @@ const addTodo = (value) => {
                 foot.remove()
                 displayEmptyLayout()
             }
+            
+            check.checked ? completed--: completed
+
+            
+            
+            //  counter 
+            
+            total--
+             
+            if(todos.length != 0) {
+                document.querySelector('#completed').innerHTML = `
+                Completed items: ${completed}
+                `
+                document.querySelector('#total').innerHTML = `
+                Total items: ${total}
+                `
+            } else {
+                completed = 0
+                total = 0
+            }
+            
         }
 
         check.onclick = () => {
             let itemToCheck = findTodo(container.getAttribute('id'))
-            let changeText = (value) => {
-                itemToCheck.style.textDecoration = value 
+        
+            if(check.checked) {
+                itemToCheck.style.textDecoration = 'line-through'
+                completed++
+            } else {
+                itemToCheck.style.textDecoration = 'none'
+                completed--
             }
-            check.checked ? changeText('line-through') : changeText('none')
+            document.querySelector('#completed').innerHTML = `
+            Completed items: ${completed}
+            `
         }
-
 
     }
 }
 
-// const removeTodo = (key) => {
-//     document.getElementById(key).remove()
-//     if (todos.length === 0) {
-//         //Remove previous and display empty
-//         let foot = document.querySelector('.todoFooter')
-//         foot.remove()
-//         displayEmptyLayout()
-//     }
-// }
+
 
 const findTodo = (key) => {
     return document.getElementById(key)

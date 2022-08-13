@@ -248,7 +248,7 @@ header svg {
 
 #wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 .Todo {
     display: flex;
