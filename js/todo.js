@@ -10,9 +10,9 @@ let emptyTodoLayout = `
     
 `;
 
-var key = 0;
-var total = 0;
-var completed = 0;
+let key = 0;
+let total = 0;
+let completed = 0;
 
 const displayList = () => {
   document.querySelector(".empty").remove();
@@ -34,6 +34,7 @@ const displayEmptyLayout = () => {
   wrap.innerHTML = emptyTodoLayout;
   container.appendChild(wrap);
 };
+let allTodos = new Array
 
 let total_text = document.querySelector("#total");
 let completed_text = document.querySelector("#completed");
@@ -53,6 +54,7 @@ const addTodo = (value) => {
     let container = document.createElement("div");
     container.setAttribute("id", key++);
     container.classList.add("Todo");
+    container.setAttribute('check', false)
     todoContainer.appendChild(container);
 
     const btn = document.createElement("button");
@@ -132,9 +134,11 @@ const addTodo = (value) => {
 
       if (check.checked) {
         itemToCheck.style.textDecoration = "line-through";
+        itemToCheck.setAttribute('check', true)
         completed++;
       } else {
         itemToCheck.style.textDecoration = "none";
+        itemToCheck.setAttribute('check', false)
         completed--;
       }
       document.querySelector("#completed").innerHTML = `
@@ -142,8 +146,10 @@ const addTodo = (value) => {
             `;
     };
   }
+
 };
 
 const findTodo = (key) => {
   return document.getElementById(key);
 };
+

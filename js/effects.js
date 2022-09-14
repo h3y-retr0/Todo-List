@@ -4,8 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const sendTodoDiv = document.getElementById("send");
   const sendBtn = document.getElementById("sendBtn");
   const input = document.getElementById("todoInput");
-
+  const searchBtn = document.getElementById("searchIcon")
   displayEmptyLayout();
+
+  searchBtn.addEventListener('click', () => {
+    let searchBar = document.querySelector('#s-input')
+    searchBar.style.display = 'inline';
+    searchBar.style.animation = 'showSearchBar';
+    searchBar.style.animationDuration = '2s'
+  })
 
   input.addEventListener("keyup", () => {
     if (parseInt(input.value.length) >= 2) {
