@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sendBtn = document.getElementById("sendBtn");
   const input = document.getElementById("todoInput");
   const searchBtn = document.getElementById("searchIcon")
+  const closeBtn = document.getElementById("closeIcon")
   displayEmptyLayout();
 
   searchBtn.addEventListener('click', () => {
@@ -12,6 +13,27 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBar.style.display = 'inline';
     searchBar.style.animation = 'showSearchBar';
     searchBar.style.animationDuration = '2s'
+    setTimeout(() => {
+      searchBtn.style.display = 'none'
+      closeBtn.style.display = 'block'
+      closeBtn.style.animation = 'fadeIn'
+      closeBtn.style.animationDuration = '1s'
+    }, 1600)
+  })
+
+  closeBtn.addEventListener('click', () => {
+    let searchBar = document.querySelector('#s-input')
+    searchBar.style.animation = 'fadeSearchBarOut';
+    searchBar.style.animationDuration = '2s'
+    setTimeout(() => {
+      searchBar.style.display = 'none';
+      closeBtn.style.display = 'none'
+      searchBtn.style.display = 'block'
+      searchBtn.style.animation = 'fadeIn'
+      searchBtn.style.animationDuration = '1s'
+    }, 1700)
+    
+    
   })
 
   input.addEventListener("keyup", () => {
