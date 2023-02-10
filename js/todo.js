@@ -74,6 +74,7 @@ const addTodo = (value) => {
 
     let edit = document.createElement("input");
     edit.setAttribute("id", "edit");
+    edit.classList.add('todoName')
     edit.setAttribute("type", "text");
     edit.setAttribute("placeholder", "Edit your todo item here");
     edit.setAttribute("value", value);

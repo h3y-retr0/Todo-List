@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBar.style.display = 'inline';
     searchBar.style.animation = 'showSearchBar';
     searchBar.style.animationDuration = '2s'
+    searchBar.focus()
     setTimeout(() => {
       searchBtn.style.display = 'none'
       closeBtn.style.display = 'block'
